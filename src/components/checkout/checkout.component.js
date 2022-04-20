@@ -6,7 +6,6 @@ import {CheckoutContainer, CheckoutHeader, HeaderBlock, Total,} from "./checkout
 
 function CheckoutComponent(props) {
   const {cartItems, total} = useContext(CartContext);
-  const headerItems = ["Product", "Description", "Quantity", "Price", "Remove"];
   return (
     <CheckoutContainer>
       <CheckoutHeader>
