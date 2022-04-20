@@ -1,8 +1,8 @@
 import React, {useContext, useState} from "react";
 import {createAuthUserWithEmailAndPassword, createUserDocFromAuth,} from "../../utils/firebase.utils";
 import FormInputComponent from "../form-input/form-input.component";
-import "./sign-up.styles.scss";
-import ButtonComponent from "../button/button.component";
+import "./sign-up.styles";
+import ButtonComponent, {BUTTON_TYPE} from "../button/button.component";
 import {UserContext} from "../../context/user.context";
 
 const defaultFormFields = {
@@ -92,7 +92,9 @@ function SignUpComponent() {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <ButtonComponent type="submit">Sign Up</ButtonComponent>
+        <ButtonComponent buttonType={BUTTON_TYPE.base} type="submit">
+          Sign Up
+        </ButtonComponent>
       </form>
     </div>
   );

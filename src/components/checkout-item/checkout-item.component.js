@@ -1,8 +1,9 @@
 import * as React from "react";
 import {useContext} from "react";
-import "./checkout-item.styles.scss";
+import "./checkout-item.styles";
 import {CartContext} from "../../context/cart-context";
 import RemoveIcon from "../../assets/remove-icon.png";
+import {Arrow, CheckoutItemContainer, ImgContainer, Name, Price, Quantity, RemoveButton,} from "./checkout-item.styles";
 
 export const CheckoutItemComponent = ({cartItem}) => {
   const {imageUrl, name, quantity, price} = cartItem;
@@ -11,28 +12,23 @@ export const CheckoutItemComponent = ({cartItem}) => {
   const addProductToCart = () => addItemToCart(cartItem);
   const reduceQuantity = () => reduceQuantityOfItem(cartItem);
   return (
-    <div className="checkout-item-container">
-      <div className="image-container">
-        <img src={imageUrl}/>
-      </div>
-      <div className="name">{name}</div>
-      <div className="quantity">
-        <div className="arrow" onClick={reduceQuantity}>
-          {"❮"}
-        </div>
+    <CheckoutItemContainer>
+      <ImgContainer>
+        <img src={imageUrl} alt="checkout-item"/>
+      </ImgContainer>
+      <Name>{name}</Name>
+      <Quantity>
+        <Arrow onClick={reduceQuantity}>{"❮"}</Arrow>
         {quantity}
-        <div className="arrow" onClick={addProductToCart}>
-          {"❯"}
-        </div>
-      </div>
-      <div className="price">{price * quantity}</div>
-      <img
+        <Arrow onClick={addProductToCart}>{"❯"}</Arrow>
+      </Quantity>
+      <Price>{price * quantity}</Price>
+      <RemoveButton
         src={RemoveIcon}
-        className="remove-button"
         onClick={removeItemFromCart}
         alt="remove-icon"
       />
-    </div>
+    </CheckoutItemContainer>
   );
 };
 export default CheckoutItemComponent;

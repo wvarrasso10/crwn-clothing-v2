@@ -1,16 +1,17 @@
 import React from "react";
 import SignUpComponent from "../../sign-up/sign-up.component";
 import SignInComponent from "../../sign-in/sign-in.component";
-import "./authentication.styles.scss";
+import "./authentication.styles";
+import {AuthenticationContainer} from "./authentication.styles";
 
 function AuthenticationComponent() {
   return (
-    <div className="authentication-container">
+    <AuthenticationContainer>
       <SignInComponent/>
       <div>
         <SignUpComponent/>
       </div>
-    </div>
+    </AuthenticationContainer>
   );
 }
 

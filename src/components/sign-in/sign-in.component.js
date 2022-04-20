@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import {signInUserWithEmailAndPassword, signInWithGooglePopup,} from "../../utils/firebase.utils";
 import FormInputComponent from "../form-input/form-input.component";
-import "./sign-in.styles.scss";
-import ButtonComponent from "../button/button.component";
+import "./sign-in.styles";
+import ButtonComponent, {BUTTON_TYPE} from "../button/button.component";
 import GoogleSignInButton from "../../assets/btn_google_signin_light_normal_web.png";
+import {ButtonsContainer, SignInContainer} from "./sign-in.styles";
 
 const defaultFormFields = {
   email: "",
@@ -21,7 +22,7 @@ function SignInComponent() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const {user} = await signInUserWithEmailAndPassword(email, password);
+      await signInUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
       console.log(error.code);
@@ -34,7 +35,7 @@ function SignInComponent() {
   };
 
   const logGoogleUser = async () => {
-    const {user} = await signInWithGooglePopup();
+    await signInWithGooglePopup();
   };
 
   const handleChange = (event) => {
@@ -43,7 +44,7 @@ function SignInComponent() {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignInContainer>
       <h2>Don't have an account</h2>
       <span>Sign up with your email and password</span>
       <form
@@ -67,16 +68,18 @@ function SignInComponent() {
           value={password}
           type="password"
         />
-        <div className="buttons-container">
+        <ButtonsContainer>
           <img
             src={GoogleSignInButton}
             alt="google-sign-in"
             onClick={logGoogleUser}
           />
-          <ButtonComponent type="submit">Sign In</ButtonComponent>
-        </div>
+          <ButtonComponent buttonType={BUTTON_TYPE.base} type="submit">
+            Sign In
+          </ButtonComponent>
+        </ButtonsContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 }
 

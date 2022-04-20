@@ -1,5 +1,4 @@
 import "./App.css";
-import "./catagories.styles.scss";
 import HomeComponent from "./components/routes/home/home.component";
 import {Route, Routes} from "react-router";
 import NavBarComponent from "./components/routes/nav-bar/nav-bar.component";
@@ -12,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<NavBarComponent/>}>
         <Route index element={<HomeComponent/>}/>
-        <Route path="sign-in" element={<AuthenticationComponent/>}/>
+        <Route path="auth" element={<AuthenticationComponent/>}/>
         <Route path="shop/*" element={<ShopComponent/>}/>
         <Route path="checkout" element={<CheckoutComponent/>}/>
       </Route>
