@@ -9,11 +9,11 @@ import CheckoutComponent from "./components/checkout/checkout.component";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<NavBarComponent/>}>
-        <Route index element={<HomeComponent/>}/>
-        <Route path="auth" element={<AuthenticationComponent/>}/>
-        <Route path="shop/*" element={<ShopComponent/>}/>
-        <Route path="checkout" element={<CheckoutComponent/>}/>
+      <Route path="/" element={<NavBarComponent />}>
+        <Route index element={<HomeComponent />} />
+        <Route path="auth" element={<AuthenticationComponent />} />
+        <Route path="shop/*" element={<ShopComponent />} />
+        <Route path="checkout" element={<CheckoutComponent />} />
       </Route>
     </Routes>
   );

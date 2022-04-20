@@ -40,7 +40,7 @@ function DirectoryComponent() {
   return (
     <DirectoryContainer>
       {categories.map((category) => (
-        <DirectoryItemComponent key={category.id} category={category}/>
+        <DirectoryItemComponent key={category.id} category={category} />
       ))}
     </DirectoryContainer>
   );

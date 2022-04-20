@@ -13,7 +13,7 @@ const defaultFormFields = {
 
 function SignUpComponent() {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const {displayName, email, password, confirmPassword} = formFields;
+  const { displayName, email, password, confirmPassword } = formFields;
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -29,12 +29,12 @@ function SignUpComponent() {
     }
     console.log(email, password);
     try {
-      const {user} = await createAuthUserWithEmailAndPassword(
+      const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
 
-      await createUserDocFromAuth(user, {displayName});
+      await createUserDocFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -45,8 +45,8 @@ function SignUpComponent() {
     }
   };
   const handleChange = (event) => {
-    const {name, value} = event.target;
-    setFormFields({...formFields, [name]: value});
+    const { name, value } = event.target;
+    setFormFields({ ...formFields, [name]: value });
   };
   return (
     <div className="sign-up-container">

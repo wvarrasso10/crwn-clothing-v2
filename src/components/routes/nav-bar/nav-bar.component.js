@@ -10,13 +10,13 @@ import {CartContext} from "../../../context/cart-context";
 import {LogoContainer, NavigationContainer, NavLink, NavLinks,} from "./nav-bar.styles";
 
 function NavBarComponent() {
-  const {currentUser} = useContext(UserContext);
-  const {isCartOpen} = useContext(CartContext);
+  const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
   return (
     <Fragment>
       <NavigationContainer className="navigation">
         <LogoContainer className="logo-container" to="/">
-          <CrwnLogo/>
+          <CrwnLogo />
         </LogoContainer>
         <NavLinks className="nav-links-container">
           <NavLink className="nav-link" to="/shop">
@@ -31,11 +31,11 @@ function NavBarComponent() {
               SIGN IN
             </NavLink>
           )}
-          <CartIconComponent/>
+          <CartIconComponent />
         </NavLinks>
-        {isCartOpen && <CartDropdownComponent/>}
+        {isCartOpen && <CartDropdownComponent />}
       </NavigationContainer>
-      <Outlet/>
+      <Outlet />
     </Fragment>
   );
 }

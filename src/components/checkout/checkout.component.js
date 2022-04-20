@@ -5,7 +5,7 @@ import CheckoutItemComponent from "../checkout-item/checkout-item.component";
 import {CheckoutContainer, CheckoutHeader, HeaderBlock, Total,} from "./checkout.styles";
 
 function CheckoutComponent(props) {
-  const {cartItems, total} = useContext(CartContext);
+  const { cartItems, total } = useContext(CartContext);
   return (
     <CheckoutContainer>
       <CheckoutHeader>
@@ -18,7 +18,7 @@ function CheckoutComponent(props) {
       {cartItems &&
         cartItems.map((cartItem) => {
           return (
-            <CheckoutItemComponent key={cartItem.id} cartItem={cartItem}/>
+            <CheckoutItemComponent key={cartItem.id} cartItem={cartItem} />
           );
         })}
       <Total>{`TOTAL: $${total}`}</Total>

@@ -7,7 +7,7 @@ import {useNavigate} from "react-router";
 import {CartDropdownContainer, CartItems, EmptyMessage,} from "./cart-dropdown.styles";
 
 function CartDropdownComponent() {
-  const {cartItems} = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
 
   let navigate = useNavigate();
   const routeChange = () => {
@@ -21,7 +21,7 @@ function CartDropdownComponent() {
         {!cartItems.length && <EmptyMessage>No Items In Cart</EmptyMessage>}
         {cartItems &&
           cartItems.map((item) => (
-            <CartItemComponent key={item.id} cartItem={item}/>
+            <CartItemComponent key={item.id} cartItem={item} />
           ))}
       </CartItems>
       <ButtonComponent buttonType={BUTTON_TYPE.base} onClick={routeChange}>

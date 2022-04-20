@@ -5,16 +5,16 @@ import {CartContext} from "../../context/cart-context";
 import RemoveIcon from "../../assets/remove-icon.png";
 import {Arrow, CheckoutItemContainer, ImgContainer, Name, Price, Quantity, RemoveButton,} from "./checkout-item.styles";
 
-export const CheckoutItemComponent = ({cartItem}) => {
-  const {imageUrl, name, quantity, price} = cartItem;
-  const {removeItemFromCart, addItemToCart, reduceQuantityOfItem} =
+export const CheckoutItemComponent = ({ cartItem }) => {
+  const { imageUrl, name, quantity, price } = cartItem;
+  const { removeItemFromCart, addItemToCart, reduceQuantityOfItem } =
     useContext(CartContext);
   const addProductToCart = () => addItemToCart(cartItem);
   const reduceQuantity = () => reduceQuantityOfItem(cartItem);
   return (
     <CheckoutItemContainer>
       <ImgContainer>
-        <img src={imageUrl} alt="checkout-item"/>
+        <img src={imageUrl} alt="checkout-item" />
       </ImgContainer>
       <Name>{name}</Name>
       <Quantity>

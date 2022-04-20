@@ -4,13 +4,13 @@ import ButtonComponent, {BUTTON_TYPE} from "../button/button.component";
 import {CartContext} from "../../context/cart-context";
 import {Footer, Name, Price, ProductCardContainer,} from "./product-card.styles";
 
-function ProductCardComponent({product}) {
-  const {name, imageUrl, price} = product;
-  const {addItemToCart} = useContext(CartContext);
+function ProductCardComponent({ product }) {
+  const { name, imageUrl, price } = product;
+  const { addItemToCart } = useContext(CartContext);
   const addProductToCart = () => addItemToCart(product);
   return (
     <ProductCardContainer>
-      <img src={imageUrl} alt={`${name}`}/>
+      <img src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>{name}</Name>
         <Price>{price}</Price>

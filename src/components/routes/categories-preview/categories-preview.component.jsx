@@ -4,7 +4,7 @@ import CategoryPreviewComponent from "../../category-preview/category-preview.co
 import "./categories-preview.styles.scss";
 
 function CategoriesPreview() {
-  const {categoryData} = useContext(CategoryContext);
+  const { categoryData } = useContext(CategoryContext);
   return (
     <Fragment>
       {Object.keys(categoryData).map((title) => {

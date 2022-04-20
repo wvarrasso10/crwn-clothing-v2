@@ -6,7 +6,7 @@ export const CategoryContext = createContext({
   categoryData: {},
 });
 
-export const CategoryProvider = ({children}) => {
+export const CategoryProvider = ({ children }) => {
   const [categoryData, setCategoryData] = useState({});
   //ep calls in use effect must be in async func
 
@@ -19,7 +19,7 @@ export const CategoryProvider = ({children}) => {
     getCategoriesMap();
   }, []);
 
-  const value = {categoryData};
+  const value = { categoryData };
 
   return (
     <CategoryContext.Provider value={value}>

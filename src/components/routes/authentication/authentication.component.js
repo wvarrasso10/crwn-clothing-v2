@@ -7,9 +7,9 @@ import {AuthenticationContainer} from "./authentication.styles";
 function AuthenticationComponent() {
   return (
     <AuthenticationContainer>
-      <SignInComponent/>
+      <SignInComponent />
       <div>
-        <SignUpComponent/>
+        <SignUpComponent />
       </div>
     </AuthenticationContainer>
   );
