@@ -1,14 +1,14 @@
 import React from "react";
 
-function CatagoriesListComponent({category}) {
+function DirectoryItemComponent({category}) {
   const {id, title, imageUrl} = category;
   return (
-    <div key={id} className="category-container">
+    <div key={id} className="directory-item-container">
       <div
         className="background-image"
         style={{backgroundImage: `url(${imageUrl}`}}
       />
-      <div className="category-body-container">
+      <div className="body">
         <h2>{title}</h2>
         <p>Shop now</p>
       </div>
@@ -16,4 +16,4 @@ function CatagoriesListComponent({category}) {
   );
 }
 
-export default CatagoriesListComponent;
+export default DirectoryItemComponent;

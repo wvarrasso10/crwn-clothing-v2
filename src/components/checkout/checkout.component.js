@@ -4,7 +4,7 @@ import {CartContext} from "../../context/cart-context";
 import CheckoutItemComponent from "../checkout-item/checkout-item.component";
 
 function CheckoutComponent(props) {
-  const {cartItems} = useContext(CartContext);
+  const {cartItems, total} = useContext(CartContext);
   const headerItems = ["Product", "Description", "Quantity", "Price", "Remove"];
   return (
     <div className="checkout-container">
@@ -21,6 +21,7 @@ function CheckoutComponent(props) {
             <CheckoutItemComponent key={cartItem.id} cartItem={cartItem}/>
           );
         })}
+      <div className="total">{`TOTAL: $${total}`}</div>
     </div>
   );
 }

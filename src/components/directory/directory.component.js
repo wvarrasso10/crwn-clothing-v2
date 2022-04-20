@@ -1,5 +1,5 @@
 import React from "react";
-import CatagoriesListComponent from "../categories-list/catagories-list.component";
+import DirectoryItemComponent from "../directory-item/directory-item.component";
 import "./directory.styles.scss";
 
 const categories = [
@@ -34,7 +34,7 @@ function DirectoryComponent({category}) {
   return (
     <div className="categories-container">
       {categories.map((category) => (
-        <CatagoriesListComponent key={category.id} category={category}/>
+        <DirectoryItemComponent key={category.id} category={category}/>
       ))}
     </div>
   );

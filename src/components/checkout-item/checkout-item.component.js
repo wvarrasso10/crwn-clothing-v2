@@ -18,11 +18,11 @@ export const CheckoutItemComponent = ({cartItem}) => {
       <div className="name">{name}</div>
       <div className="quantity">
         <div className="arrow" onClick={reduceQuantity}>
-          {"❮ "}
+          {"❮"}
         </div>
         {quantity}
         <div className="arrow" onClick={addProductToCart}>
-          {" ❯"}
+          {"❯"}
         </div>
       </div>
       <div className="price">{price * quantity}</div>

@@ -1,16 +1,29 @@
-import {createContext, useState} from "react";
-import SHOP_DATA from "../shop-data.json";
+import {createContext, useEffect, useState} from "react";
+import {getCategoriesAndDocuments} from "../utils/firebase.utils";
+
 // as the actual value you want to access
-export const ProductContext = createContext({
-  productData: [],
-  setProductData: () => null,
+export const CategoryContext = createContext({
+  categoryData: {},
 });
 
-export const ProductProvider = ({children}) => {
-  const [productData, setProductData] = useState(SHOP_DATA);
-  const value = {productData, setProductData};
+export const CategoryProvider = ({children}) => {
+  const [categoryData, setCategoryData] = useState({});
+  //ep calls in use effect must be in async func
+
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+      const categoryMap = await getCategoriesAndDocuments();
+      console.log(categoryMap);
+      setCategoryData(categoryMap);
+    };
+    getCategoriesMap();
+  }, []);
+
+  const value = {categoryData};
 
   return (
-    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+    <CategoryContext.Provider value={value}>
+      {children}
+    </CategoryContext.Provider>
   );
 };

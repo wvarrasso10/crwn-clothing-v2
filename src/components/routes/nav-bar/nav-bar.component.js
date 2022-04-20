@@ -31,9 +31,6 @@ function NavBarComponent() {
               SIGN IN
             </Link>
           )}
-          <Link className="sign-in" to="/sign-in">
-            Sign In
-          </Link>
           <CartIconComponent/>
         </div>
         {isCartOpen && <CartDropdownComponent/>}
