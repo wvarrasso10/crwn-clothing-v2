@@ -1,10 +1,15 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./checkout.styles";
-import {CartContext} from "../../context/cart-context";
+import { CartContext } from "../../context/cart-context";
 import CheckoutItemComponent from "../checkout-item/checkout-item.component";
-import {CheckoutContainer, CheckoutHeader, HeaderBlock, Total,} from "./checkout.styles";
+import {
+  CheckoutContainer,
+  CheckoutHeader,
+  HeaderBlock,
+  Total,
+} from "./checkout.styles";
 
-function CheckoutComponent(props) {
+function CheckoutComponent() {
   const { cartItems, total } = useContext(CartContext);
   return (
     <CheckoutContainer>

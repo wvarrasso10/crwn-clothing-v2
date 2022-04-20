@@ -1,10 +1,14 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./cart-dropdown.styles";
-import ButtonComponent, {BUTTON_TYPE} from "../button/button.component";
+import ButtonComponent, { BUTTON_TYPE } from "../button/button.component";
 import CartItemComponent from "../cart-item/cart-item.component";
-import {CartContext} from "../../context/cart-context";
-import {useNavigate} from "react-router";
-import {CartDropdownContainer, CartItems, EmptyMessage,} from "./cart-dropdown.styles";
+import { CartContext } from "../../context/cart-context";
+import { useNavigate } from "react-router";
+import {
+  CartDropdownContainer,
+  CartItems,
+  EmptyMessage,
+} from "./cart-dropdown.styles";
 
 function CartDropdownComponent() {
   const { cartItems } = useContext(CartContext);

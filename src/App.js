@@ -1,6 +1,6 @@
 import "./App.css";
 import HomeComponent from "./components/routes/home/home.component";
-import {Route, Routes} from "react-router";
+import { Route, Routes } from "react-router";
 import NavBarComponent from "./components/routes/nav-bar/nav-bar.component";
 import AuthenticationComponent from "./components/routes/authentication/authentication.component";
 import ShopComponent from "./components/routes/shop/shop.component";

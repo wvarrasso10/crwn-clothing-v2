@@ -1,6 +1,6 @@
 import React from "react";
 import "./button.styles";
-import {BaseButton, InvertedButton} from "./button.styles";
+import { BaseButton, InvertedButton } from "./button.styles";
 
 export const BUTTON_TYPE = {
   base: "base",

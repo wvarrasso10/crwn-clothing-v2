@@ -1,8 +1,11 @@
-import React, {useState} from "react";
-import {createAuthUserWithEmailAndPassword, createUserDocFromAuth,} from "../../utils/firebase.utils";
+import React, { useState } from "react";
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserDocFromAuth,
+} from "../../utils/firebase.utils";
 import FormInputComponent from "../form-input/form-input.component";
 import "./sign-up.styles";
-import ButtonComponent, {BUTTON_TYPE} from "../button/button.component";
+import ButtonComponent, { BUTTON_TYPE } from "../button/button.component";
 
 const defaultFormFields = {
   displayName: "",

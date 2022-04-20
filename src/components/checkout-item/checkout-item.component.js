@@ -1,9 +1,17 @@
 import * as React from "react";
-import {useContext} from "react";
+import { useContext } from "react";
 import "./checkout-item.styles";
-import {CartContext} from "../../context/cart-context";
+import { CartContext } from "../../context/cart-context";
 import RemoveIcon from "../../assets/remove-icon.png";
-import {Arrow, CheckoutItemContainer, ImgContainer, Name, Price, Quantity, RemoveButton,} from "./checkout-item.styles";
+import {
+  Arrow,
+  CheckoutItemContainer,
+  ImgContainer,
+  Name,
+  Price,
+  Quantity,
+  RemoveButton,
+} from "./checkout-item.styles";
 
 export const CheckoutItemComponent = ({ cartItem }) => {
   const { imageUrl, name, quantity, price } = cartItem;

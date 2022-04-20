@@ -1,9 +1,9 @@
-import React, {Fragment, useContext, useEffect, useState} from "react";
-import {CategoryContext} from "../../../context/product.context";
-import {useParams} from "react-router";
+import React, { Fragment, useContext, useEffect, useState } from "react";
+import { CategoryContext } from "../../../context/product.context";
+import { useParams } from "react-router";
 import ProductCardComponent from "../../product-card/product-card.component";
 import "./category.styles";
-import {CategoryContainer, CategoryTitle} from "./category.styles";
+import { CategoryContainer, CategoryTitle } from "./category.styles";
 
 function Category() {
   const { category } = useParams();

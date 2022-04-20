@@ -1,5 +1,5 @@
-import React, {Fragment, useContext} from "react";
-import {CategoryContext} from "../../../context/product.context";
+import React, { Fragment, useContext } from "react";
+import { CategoryContext } from "../../../context/product.context";
 import CategoryPreviewComponent from "../../category-preview/category-preview.component";
 import "./categories-preview.styles.scss";
 

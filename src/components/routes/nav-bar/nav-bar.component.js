@@ -1,13 +1,18 @@
-import React, {Fragment, useContext} from "react";
-import {Outlet} from "react-router";
-import {ReactComponent as CrwnLogo} from "../../../assets/crown.svg";
+import React, { Fragment, useContext } from "react";
+import { Outlet } from "react-router";
+import { ReactComponent as CrwnLogo } from "../../../assets/crown.svg";
 import "./nav-bar.styles";
-import {UserContext} from "../../../context/user.context";
-import {signOutUser} from "../../../utils/firebase.utils";
+import { UserContext } from "../../../context/user.context";
+import { signOutUser } from "../../../utils/firebase.utils";
 import CartIconComponent from "../../cart-icon/cart-icon.component";
 import CartDropdownComponent from "../../cart-dropdown/cart-dropdown.component";
-import {CartContext} from "../../../context/cart-context";
-import {LogoContainer, NavigationContainer, NavLink, NavLinks,} from "./nav-bar.styles";
+import { CartContext } from "../../../context/cart-context";
+import {
+  LogoContainer,
+  NavigationContainer,
+  NavLink,
+  NavLinks,
+} from "./nav-bar.styles";
 
 function NavBarComponent() {
   const { currentUser } = useContext(UserContext);
