@@ -8,6 +8,7 @@ import "./sign-in.styles";
 import ButtonComponent, { BUTTON_TYPE } from "../button/button.component";
 import GoogleSignInButton from "../../assets/btn_google_signin_light_normal_web.png";
 import { ButtonsContainer, SignInContainer } from "./sign-in.styles";
+import { useNavigate } from "react-router";
 
 const defaultFormFields = {
   email: "",
@@ -18,6 +19,8 @@ function SignInComponent() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  let navigate = useNavigate();
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -27,6 +30,7 @@ function SignInComponent() {
     try {
       await signInUserWithEmailAndPassword(email, password);
       resetFormFields();
+      navigate("/");
     } catch (error) {
       console.log(error.code);
       const errorCode = {
@@ -39,6 +43,7 @@ function SignInComponent() {
 
   const logGoogleUser = async () => {
     await signInWithGooglePopup();
+    navigate("/");
   };
 
   const handleChange = (event) => {
