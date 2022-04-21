@@ -13,11 +13,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <CategoryProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoryProvider>
+        <CartProvider>
+          <App />
+        </CartProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

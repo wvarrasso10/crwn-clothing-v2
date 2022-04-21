@@ -19,6 +19,7 @@ export const CheckoutItemComponent = ({ cartItem }) => {
     useContext(CartContext);
   const addProductToCart = () => addItemToCart(cartItem);
   const reduceQuantity = () => reduceQuantityOfItem(cartItem);
+  const removeCartItem = () => removeItemFromCart(cartItem);
   return (
     <CheckoutItemContainer>
       <ImgContainer>
@@ -33,7 +34,7 @@ export const CheckoutItemComponent = ({ cartItem }) => {
       <Price>{price * quantity}</Price>
       <RemoveButton
         src={RemoveIcon}
-        onClick={removeItemFromCart}
+        onClick={removeCartItem}
         alt="remove-icon"
       />
     </CheckoutItemContainer>
