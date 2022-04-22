@@ -13,9 +13,12 @@ import {
   NavLink,
   NavLinks,
 } from "./nav-bar.styles";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../../store/user/user.selector";
 
 function NavBarComponent() {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
+  console.log(currentUser);
   const { isCartOpen } = useContext(CartContext);
   return (
     <Fragment>
