@@ -1,5 +1,5 @@
 import { createAction } from "../../utils/reducer/reducer.utils";
 import { CATEGORY_ACTION_TYPES } from "./category.types";
 
-export const setCategoryData = (categoryData) =>
-  createAction(CATEGORY_ACTION_TYPES.SET_CATEGORY_DATA, categoryData);
+export const setCategories = (categoryArray) =>
+  createAction(CATEGORY_ACTION_TYPES.SET_CATEGORIES, categoryArray);
