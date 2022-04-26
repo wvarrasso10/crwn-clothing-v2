@@ -15,11 +15,11 @@ import {
 } from "./nav-bar.styles";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../store/user/user.selector";
+import { selectIsCartOpen} from "../../../store/cart/cart.selector";
 
 function NavBarComponent() {
   const currentUser = useSelector(selectCurrentUser);
-  console.log(currentUser);
-  const { isCartOpen } = useContext(CartContext);
+  const isCartOpen = useSelector(selectIsCartOpen);
   return (
     <Fragment>
       <NavigationContainer className="navigation">

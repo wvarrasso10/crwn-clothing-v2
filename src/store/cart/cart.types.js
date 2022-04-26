@@ -1,0 +1,6 @@
+export const CART_ACTION_TYPES = {
+    IS_CART_OPEN: "cart/IS_CART_OPEN",
+    SET_CART_ITEMS: "cart/SET_CART_ITEMS",
+    SET_CART_TOTAL: 'cart/SET-CART-TOTAL',
+    SET_CART_COUNT: 'cart/SET-CART-COUNT'
+};

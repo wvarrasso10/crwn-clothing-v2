@@ -1,21 +1,15 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
-import { CategoryContext } from "../../../context/product.context";
 import { useParams } from "react-router";
 import ProductCardComponent from "../../product-card/product-card.component";
 import "./category.styles";
 import { CategoryContainer, CategoryTitle } from "./category.styles";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  createUserDocFromAuth,
-  getCategoriesAndDocuments,
-  onAuthStateChangedListener,
-} from "../../../utils/firebase.utils";
-import { setCategoryData } from "../../../store/category/category.action";
-import { selectCurrentCategory } from "../../../store/category/category.selector";
+import { useSelector } from "react-redux";
+
+import { selectCategoriesMap } from "../../../store/category/category.selector";
 
 function Category() {
   const { category } = useParams();
-  const categoryData = useSelector(selectCurrentCategory);
+  const categoryData = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoryData[category]);
 
   useEffect(() => {

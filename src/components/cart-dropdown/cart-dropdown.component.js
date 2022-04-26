@@ -9,9 +9,12 @@ import {
   CartItems,
   EmptyMessage,
 } from "./cart-dropdown.styles";
+import {selectCartItems} from "../../store/cart/cart.selector";
+import {useSelector} from "react-redux";
 
 function CartDropdownComponent() {
-  const { cartItems } = useContext(CartContext);
+  // const { cartItems } = useContext(CartContext);
+    const cartItems = useSelector(selectCartItems);
 
   let navigate = useNavigate();
   const routeChange = () => {

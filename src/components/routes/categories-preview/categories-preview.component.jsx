@@ -1,21 +1,13 @@
-import React, { Fragment, useContext, useEffect } from "react";
-import { CategoryContext } from "../../../context/product.context";
+import React, { Fragment } from "react";
 import CategoryPreviewComponent from "../../category-preview/category-preview.component";
 import "./categories-preview.styles.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getCategoriesMap,
-  selectCurrentCategory,
+  selectCategoriesMap,
 } from "../../../store/category/category.selector";
-import { getCategoriesAndDocuments } from "../../../utils/firebase.utils";
-import { setCategoryData } from "../../../store/category/category.action";
 
 function CategoriesPreview() {
-  /*
-  const { categoryData } = useContext(CategoryContext);
-*/
-
-  const categoryData = useSelector(selectCurrentCategory);
+  const categoryData = useSelector(selectCategoriesMap);
   return (
     <Fragment>
       {Object.keys(categoryData).map((title) => {

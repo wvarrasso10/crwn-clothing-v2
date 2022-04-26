@@ -1,3 +1,4 @@
+/*
 import { createContext, useEffect, useReducer, useState } from "react";
 import { createAction } from "../utils/reducer/reducer.utils";
 
@@ -12,14 +13,14 @@ const addCartItem = (cartItems, productToAdd) => {
   return [...cartItems];
 
   //es6 way of doing it
-  /* const existingItem = cartItems.find((item) => item.id === productToAdd.id);
+  /!* const existingItem = cartItems.find((item) => item.id === productToAdd.id);
   if (existingItem)
     return cartItems.map((cartItem) =>
       cartItem.id === productToAdd.id
         ? { ...cartItem, quantity: (cartItem.quantity += 1) }
         : cartItem
     );
-  return [cartItems, { ...productToAdd, quantity: 1 }];*/
+  return [cartItems, { ...productToAdd, quantity: 1 }];*!/
 };
 
 const removeCartItem = (cartItems, productToRemove) => {
@@ -47,10 +48,10 @@ export const CartContext = createContext({
   reduceQuantityOfItem: () => {},
 });
 
-export const CART_ACTION_TYPES = {
+/!*export const CART_ACTION_TYPES = {
   IS_CART_OPEN: "IS_CART_OPEN",
   SET_CART_ITEMS: "SET_CART_ITEMS",
-};
+};*!/
 
 const cartReducer = (state, action) => {
   const { type, payload } = action;
@@ -133,3 +134,4 @@ export const CartProvider = ({ children }) => {
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
+*/

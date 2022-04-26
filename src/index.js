@@ -15,9 +15,9 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         {/*<UserProvider>*/}
-        <CartProvider>
+        {/*<CartProvider>*/}
           <App />
-        </CartProvider>
+        {/*</CartProvider>*/}
         {/*</UserProvider>*/}
       </BrowserRouter>
     </Provider>
